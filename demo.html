@@ -1,0 +1,15 @@
+<div style="width: 300px"></div>
+<div></div>
+
+<script src="dist/setElements.js"></script>
+<script>
+  var divs = document.querySelectorAll('div');
+  setElements(divs, 'width', function (a, b) {
+    var awidth = a.getBoundingClientRect().width;
+    var bwidth = b.getBoundingClientRect().width;
+
+    return awidth > bwidth
+      ? a
+      : b;
+  });
+</script>
